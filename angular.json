@@ -1,0 +1,411 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "core-samples-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/core-samples-app",
+      "sourceRoot": "projects/core-samples-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/core-samples-app",
+            "index": "projects/core-samples-app/src/index.html",
+            "main": "projects/core-samples-app/src/main.ts",
+            "polyfills": "projects/core-samples-app/src/polyfills.ts",
+            "tsConfig": "projects/core-samples-app/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/core-samples-app/src/favicon.ico",
+              "projects/core-samples-app/src/assets"
+            ],
+            "styles": [
+              "projects/core-samples-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/core-samples-app/src/environments/environment.ts",
+                  "with": "projects/core-samples-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "core-samples-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "core-samples-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "core-samples-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/core-samples-app/src/test.ts",
+            "polyfills": "projects/core-samples-app/src/polyfills.ts",
+            "tsConfig": "projects/core-samples-app/tsconfig.spec.json",
+            "karmaConfig": "projects/core-samples-app/karma.conf.js",
+            "assets": [
+              "projects/core-samples-app/src/favicon.ico",
+              "projects/core-samples-app/src/assets"
+            ],
+            "styles": [
+              "projects/core-samples-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/core-samples-app/tsconfig.app.json",
+              "projects/core-samples-app/tsconfig.spec.json",
+              "projects/core-samples-app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/core-samples-app/e2e/protractor.conf.js",
+            "devServerTarget": "core-samples-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "core-samples-app:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "practice-samples-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/practice-samples-app",
+      "sourceRoot": "projects/practice-samples-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/practice-samples-app",
+            "index": "projects/practice-samples-app/src/index.html",
+            "main": "projects/practice-samples-app/src/main.ts",
+            "polyfills": "projects/practice-samples-app/src/polyfills.ts",
+            "tsConfig": "projects/practice-samples-app/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/practice-samples-app/src/favicon.ico",
+              "projects/practice-samples-app/src/assets"
+            ],
+            "styles": [
+              "projects/practice-samples-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/practice-samples-app/src/environments/environment.ts",
+                  "with": "projects/practice-samples-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "practice-samples-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "practice-samples-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "practice-samples-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/practice-samples-app/src/test.ts",
+            "polyfills": "projects/practice-samples-app/src/polyfills.ts",
+            "tsConfig": "projects/practice-samples-app/tsconfig.spec.json",
+            "karmaConfig": "projects/practice-samples-app/karma.conf.js",
+            "assets": [
+              "projects/practice-samples-app/src/favicon.ico",
+              "projects/practice-samples-app/src/assets"
+            ],
+            "styles": [
+              "projects/practice-samples-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/practice-samples-app/tsconfig.app.json",
+              "projects/practice-samples-app/tsconfig.spec.json",
+              "projects/practice-samples-app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/practice-samples-app/e2e/protractor.conf.js",
+            "devServerTarget": "practice-samples-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "practice-samples-app:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "fist-material-sample-lib": {
+      "projectType": "library",
+      "root": "projects/fist-material-sample-lib",
+      "sourceRoot": "projects/fist-material-sample-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/fist-material-sample-lib/tsconfig.lib.json",
+            "project": "projects/fist-material-sample-lib/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/fist-material-sample-lib/src/test.ts",
+            "tsConfig": "projects/fist-material-sample-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/fist-material-sample-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/fist-material-sample-lib/tsconfig.lib.json",
+              "projects/fist-material-sample-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "practice-material-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/practice-material-app",
+      "sourceRoot": "projects/practice-material-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/practice-material-app",
+            "index": "projects/practice-material-app/src/index.html",
+            "main": "projects/practice-material-app/src/main.ts",
+            "polyfills": "projects/practice-material-app/src/polyfills.ts",
+            "tsConfig": "projects/practice-material-app/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/practice-material-app/src/favicon.ico",
+              "projects/practice-material-app/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "projects/practice-material-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/practice-material-app/src/environments/environment.ts",
+                  "with": "projects/practice-material-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "practice-material-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "practice-material-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "practice-material-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/practice-material-app/src/test.ts",
+            "polyfills": "projects/practice-material-app/src/polyfills.ts",
+            "tsConfig": "projects/practice-material-app/tsconfig.spec.json",
+            "karmaConfig": "projects/practice-material-app/karma.conf.js",
+            "assets": [
+              "projects/practice-material-app/src/favicon.ico",
+              "projects/practice-material-app/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "projects/practice-material-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/practice-material-app/tsconfig.app.json",
+              "projects/practice-material-app/tsconfig.spec.json",
+              "projects/practice-material-app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/practice-material-app/e2e/protractor.conf.js",
+            "devServerTarget": "practice-material-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "practice-material-app:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "core-samples-app"
+}
