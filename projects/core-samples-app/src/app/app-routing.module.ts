@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
-  {path:'bookRating', component : BookRatingComponent},
-  {path: '' , component : AppComponent , pathMatch : 'full'}
+
+  { path: 'bookRating', component: BookRatingComponent },
+  { path: ' ', component: AppComponent, pathMatch: 'full' }, // this path works only when there is space in path
 ];
 
 @NgModule({
