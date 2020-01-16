@@ -28,6 +28,8 @@
               "projects/core-samples-app/src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/core-samples-app/src/styles.scss"
             ],
             "scripts": []
@@ -93,6 +95,8 @@
               "projects/core-samples-app/src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/core-samples-app/src/styles.scss"
             ],
             "scripts": []
@@ -307,7 +311,7 @@
               "projects/practice-material-app/src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/practice-material-app/src/styles.scss"
             ],
             "scripts": []
@@ -373,7 +377,7 @@
               "projects/practice-material-app/src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/practice-material-app/src/styles.scss"
             ],
             "scripts": []
@@ -402,6 +406,41 @@
             "production": {
               "devServerTarget": "practice-material-app:serve:production"
             }
+          }
+        }
+      }
+    },
+    "mat-fitness-tracker-lib": {
+      "projectType": "library",
+      "root": "projects/mat-fitness-tracker-lib",
+      "sourceRoot": "projects/mat-fitness-tracker-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mat-fitness-tracker-lib/tsconfig.lib.json",
+            "project": "projects/mat-fitness-tracker-lib/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mat-fitness-tracker-lib/src/test.ts",
+            "tsConfig": "projects/mat-fitness-tracker-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/mat-fitness-tracker-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mat-fitness-tracker-lib/tsconfig.lib.json",
+              "projects/mat-fitness-tracker-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }

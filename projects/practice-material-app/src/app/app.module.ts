@@ -5,6 +5,7 @@ import {MatButtonModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFitnessTrackerLibModule } from 'projects/mat-fitness-tracker-lib/src/public-api';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFitnessTrackerLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]

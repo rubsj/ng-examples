@@ -24,6 +24,12 @@
       ],
       "fist-material-sample-lib/*": [
         "dist/fist-material-sample-lib/*"
+      ],
+      "mat-fitness-tracker-lib": [
+        "dist/mat-fitness-tracker-lib"
+      ],
+      "mat-fitness-tracker-lib/*": [
+        "dist/mat-fitness-tracker-lib/*"
       ]
     }
   },
