@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MatFitnessTrackerLibService } from './mat-fitness-tracker-lib.service';
+import { MatFitnessTrackerService } from './mat-fitness-tracker.service';
 
-describe('MatFitnessTrackerLibService', () => {
+describe('MatFitnessTrackerService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: MatFitnessTrackerLibService = TestBed.get(MatFitnessTrackerLibService);
+    const service: MatFitnessTrackerService = TestBed.get(MatFitnessTrackerService);
     expect(service).toBeTruthy();
   });
 });
