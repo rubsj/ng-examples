@@ -1,1 +1,39 @@
-<p>signup works!</p>
+<section class="signup-form">
+  <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm" (ngSubmit)="onSubmit(f)" >
+    <mat-form-field hintLabel="enter valid email address">
+      <input type="email" placeholder="enter your email" matInput ngModel email required name="email" #emailInput="ngModel">
+      <mat-error *ngIf="emailInput.hasError('required')">Email is required</mat-error>
+      <mat-error *ngIf="!emailInput.hasError('required')">Enter valid email</mat-error>
+    </mat-form-field>
+    <mat-form-field hintLabel="Should be at least 6 chars long">
+      <input type="password"
+              placeholder="your password"
+              matInput ngModel
+              required minlength="6"
+              #pwinput="ngModel"
+              name="password">
+      <mat-hint align="end" *ngIf="pwinput?.value?.length>0">{{pwinput?.value?.length}}/6 </mat-hint>
+      <mat-error>Min 6 char is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        [matDatepicker]="agepicker"
+        [max]="minAge"
+        [min]="maxAge"
+        name="age"
+        required
+        #ageInput="ngModel"
+        ngModel>
+      <mat-datepicker-toggle matSuffix [for]='agepicker'></mat-datepicker-toggle>
+      <mat-datepicker #agepicker></mat-datepicker>
+      <mat-hint>You must be 18 or older to signup</mat-hint>
+      <mat-error *ngIf="ageInput.hasError('matDatepickerMax')">You must be 18 or older to signup</mat-error>
+      <mat-error *ngIf="ageInput.hasError('matDatepickerMin')">you are too old to be doing this signup</mat-error>
+      <mat-error *ngIf="ageInput.hasError('required')">You must enter your age</mat-error>
+    </mat-form-field>
+      <mat-checkbox ngModel name="agree" required color='primary' #agree="ngModel">Agree to participate</mat-checkbox>
+      <mat-error *ngIf="agree.hasError('required') && (agree.touched || agree.dirty || f.submitted)">oops you forgot to agree</mat-error>
+    <button mat-raised-button color='primary' [disabled]="f.invalid" class="button-position">Submit</button>
+  </form>
+</section>

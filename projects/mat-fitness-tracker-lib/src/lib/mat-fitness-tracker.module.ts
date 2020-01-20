@@ -8,6 +8,9 @@ import { CurrentTrainingComponent } from './training/current-training/current-tr
 import { NewTrainingComponent } from './training/new-training/new-training.component';
 import { PastTrainingsComponent } from './training/past-trainings/past-trainings.component';
 import { MatFitnessTrackerRouterModule } from './mat-fitness-tracker-routing.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -22,7 +25,10 @@ import { MatFitnessTrackerRouterModule } from './mat-fitness-tracker-routing.mod
     PastTrainingsComponent],
   imports: [
     MaterialModule,
-    MatFitnessTrackerRouterModule
+    MatFitnessTrackerRouterModule,
+    FlexLayoutModule,
+    FormsModule,
+    CommonModule
   ],
   exports: [MatFitnessTrackerComponent]
 })
