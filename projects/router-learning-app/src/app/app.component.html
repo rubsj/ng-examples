@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<div *ngIf="isLoading">
+<p>...Loading</p>
+</div>
+<div class="row">
+  <div class="col-md-9">
+    <router-outlet #o="outlet"></router-outlet>
+  </div>
+  <div class="col-md-3">
+    <router-outlet name="Dashboard"></router-outlet>
+  </div>
+</div>
+

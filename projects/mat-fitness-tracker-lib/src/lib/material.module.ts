@@ -5,7 +5,8 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatDatepickerModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatSidenavModule
 } from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
@@ -21,6 +22,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatDatepickerModule,
     MatMomentDateModule,
     MatCheckboxModule,
+    MatSidenavModule,
 
   ],
   exports: [
@@ -30,7 +32,8 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatInputModule,
     MatDatepickerModule,
     MatMomentDateModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSidenavModule,
   ]
 })
 export class MaterialModule { }

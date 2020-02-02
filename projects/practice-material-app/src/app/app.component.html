@@ -1,7 +1,14 @@
-<!-- <div>
- <lib-mat-fitness-tracker></lib-mat-fitness-tracker>
-</div> -->
-<nav>
-  <a routerLink='fitness-tracker'>Fitness tracker App</a>
-</nav>
-<router-outlet></router-outlet>
+
+<mat-sidenav-container>
+  <mat-sidenav opened="true">
+    <p>I am the sidenav</p>
+    <nav>
+      <a routerLink='fitness-tracker'>Fitness tracker App</a>
+    </nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

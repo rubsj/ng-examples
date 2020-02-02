@@ -10,6 +10,7 @@ export class MatFitnessTrackerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('mat fitness tracker called ');
   }
 
 }

@@ -1,7 +1,11 @@
-<p>
-  mat-fitness-tracker-lib works!
-</p>
-<button mat-button color="primary">my Mat button</button>
-<button mat-raised-button color="accent">mat raised button</button>
-<button mat-icon-button color="primary" aria-label="home"><mat-icon>home</mat-icon> </button>
-<p>mat icon example <mat-icon>sentiment_satisfied</mat-icon></p>
+
+<mat-sidenav-container>
+  <mat-sidenav opened="true">
+    <p>I am the sidenav in child</p>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

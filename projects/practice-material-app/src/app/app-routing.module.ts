@@ -11,8 +11,8 @@ const routes: Routes = [
         .then(mod => mod.MatFitnessTrackerLibModule)
   },
   {
-    path: '',
-    redirectTo: '',
+    path: ' ',
+    redirectTo: ' ',
     pathMatch: 'full'
   },
   // { path: ' ', component: AppComponent, pathMatch: 'full' },
