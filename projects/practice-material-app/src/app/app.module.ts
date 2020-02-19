@@ -6,17 +6,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFitnessTrackerLibModule } from 'projects/mat-fitness-tracker-lib/src/public-api';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent,
+    NavBarComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
     MatFitnessTrackerLibModule,
+    AppRoutingModule,
+    MatButtonModule,
     MatSidenavModule
   ],
   providers: [],

@@ -11,6 +11,10 @@ import { MatFitnessTrackerRouterModule } from './mat-fitness-tracker-routing.mod
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './navigation/header/header.component';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { StopTrainingComponent } from './training/current-training/stop-training.component';
 
 
 
@@ -22,7 +26,12 @@ import { CommonModule } from '@angular/common';
     TrainingComponent,
     CurrentTrainingComponent,
     NewTrainingComponent,
-    PastTrainingsComponent],
+    PastTrainingsComponent,
+    HeaderComponent,
+    SidenavListComponent,
+    WelcomeComponent,
+    StopTrainingComponent
+  ],
   imports: [
     MaterialModule,
     MatFitnessTrackerRouterModule,
@@ -30,6 +39,7 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     CommonModule
   ],
-  exports: [MatFitnessTrackerComponent]
+  exports: [MatFitnessTrackerComponent],
+  entryComponents: [StopTrainingComponent]
 })
 export class MatFitnessTrackerLibModule { }

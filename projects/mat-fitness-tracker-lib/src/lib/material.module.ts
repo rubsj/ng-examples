@@ -6,7 +6,14 @@ import {
   MatInputModule,
   MatDatepickerModule,
   MatCheckboxModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatToolbarModule,
+  MatListModule,
+  MatTabsModule,
+  MatCardModule,
+  MatSelectModule,
+  MatProgressSpinnerModule,
+  MatDialogModule
 } from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
@@ -23,7 +30,12 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatMomentDateModule,
     MatCheckboxModule,
     MatSidenavModule,
-
+    MatListModule,
+    MatTabsModule,
+    MatCardModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
   exports: [
     MatButtonModule,
@@ -34,6 +46,13 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatMomentDateModule,
     MatCheckboxModule,
     MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatTabsModule,
+    MatCardModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule { }

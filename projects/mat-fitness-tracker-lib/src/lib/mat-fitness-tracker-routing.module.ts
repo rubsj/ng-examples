@@ -4,13 +4,17 @@ import { MatFitnessTrackerComponent } from './mat-fitness-tracker.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { TrainingComponent } from './training/training.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
-
-  {path: 'signup', component: SignupComponent },
-  {path: 'login', component: LoginComponent},
-  {path: 'training', component: TrainingComponent },
-  { path: '', component: MatFitnessTrackerComponent, },
+  {
+    path: 'fitness-tracker', component: MatFitnessTrackerComponent, children: [
+      { path: '', component: WelcomeComponent },
+      { path: 'signup', component: SignupComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'training', component: TrainingComponent },
+    ]
+  },
 ];
 
 @NgModule({
