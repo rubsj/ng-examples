@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import * as moment from 'moment';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'lib-signup',
@@ -11,14 +12,18 @@ export class SignupComponent implements OnInit {
   minAge: moment.Moment;
   maxAge: moment.Moment;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    this.minAge = moment().subtract(18 , 'years');
+    this.minAge = moment().subtract(18, 'years');
     this.maxAge = moment().subtract(100, 'years');
   }
 
   onSubmit(form: NgForm) {
     console.log('signup form value ', form);
+    this.authService.registerUser({
+      email: form.value.email,
+      password: form.value.password
+    });
   }
 }

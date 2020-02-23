@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { StopTrainingComponent } from './stop-training.component';
 import { interval, Subject, NEVER, defer } from 'rxjs';
@@ -18,7 +18,7 @@ export class CurrentTrainingComponent implements OnInit, OnDestroy {
   destroy$ = new Subject();
   timer$ = new Subject();
   timer;
-
+  @Output() trainingExit = new EventEmitter<boolean>();
 
   constructor(private dialog: MatDialog) { }
 
@@ -71,6 +71,7 @@ export class CurrentTrainingComponent implements OnInit, OnDestroy {
     popupRef.afterClosed().subscribe(val => {
       if (val) {
         this.pauser$.complete();
+        this.trainingExit.emit(true);
       } else {
         this.pauser$.next(false);
       }
