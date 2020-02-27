@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { StopTrainingComponent } from './stop-training.component';
-import { interval, Subject, NEVER, defer } from 'rxjs';
+import { interval, Subject, NEVER, defer, Observable } from 'rxjs';
 import { switchMap, materialize, dematerialize, takeUntil, withLatestFrom, filter, map, share } from 'rxjs/operators';
 import * as moment from 'moment';
+import { TrainingService } from '../training.service';
 
 
 @Component({
@@ -13,25 +14,28 @@ import * as moment from 'moment';
 })
 export class CurrentTrainingComponent implements OnInit, OnDestroy {
   progress = 0;
-  source$ = interval(1000);
+  source$: Observable<number>;
   pauser$ = new Subject();
   destroy$ = new Subject();
   timer$ = new Subject();
   timer;
-  @Output() trainingExit = new EventEmitter<boolean>();
+  trainingName: string;
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private trainingService: TrainingService) { }
 
   ngOnInit() {
+    // calculate the frequency of the interval timer using the time that it takes to finish an excercise which is in seconds
+    const step = this.trainingService.runningExcercise ? (this.trainingService.runningExcercise.duration / 100) * 1000 : 1000;
+    this.source$ = interval(step);
     this.pauser$.pipe(
       takeUntil(this.destroy$),
       switchMap((paused: boolean) => {
-        console.log('switchmap of pauser called with : ', paused);
         return paused ? NEVER : this.source$;
       }),
     ).subscribe(val => {
-      this.progress = this.progress + 5 <= 100 ? this.progress + 5 : 100;
+      this.progress = this.progress + 1 <= 100 ? this.progress + 1 : 100;
       if (this.progress === 100) {
+        this.trainingService.completeExcercise();
         this.pauser$.next(true);
         this.pauser$.complete();
       }
@@ -52,10 +56,10 @@ export class CurrentTrainingComponent implements OnInit, OnDestroy {
 
     timerPauser.subscribe(t => {
       this.timerFunction(t);
-      console.log('timer t ', t);
     });
-    console.log('inside ngonint of current training');
     this.pauser$.next(false);
+
+    this.trainingName = this.trainingService.runningExcercise ? this.trainingService.runningExcercise.name : 'no training name';
 
   }
 
@@ -67,11 +71,11 @@ export class CurrentTrainingComponent implements OnInit, OnDestroy {
   stopTraining() {
 
     this.pauser$.next(true);
-    const popupRef = this.dialog.open(StopTrainingComponent, { data: { progress: this.progress } });
+    const popupRef = this.dialog.open(StopTrainingComponent, { data: { progress: this.progress, trainingName: this.trainingName } });
     popupRef.afterClosed().subscribe(val => {
       if (val) {
         this.pauser$.complete();
-        this.trainingExit.emit(true);
+        this.trainingService.cancelExcercise(this.progress);
       } else {
         this.pauser$.next(false);
       }
