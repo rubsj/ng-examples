@@ -4,11 +4,19 @@ export interface Excercise {
   name: string;
   duration: number;
   calories: number;
-  date?: moment.Moment;
+  date?: Date;
   state?: Status;
 }
 
 export enum Status {
   completed = 'completed',
   cancelled = 'cancelled',
+}
+
+export enum PastTrainingsColumns {
+  Start_Date = 'Start Date',
+  Name = 'Name',
+  Calories = 'Calories',
+  Duration = 'Duration',
+  State = 'State'
 }

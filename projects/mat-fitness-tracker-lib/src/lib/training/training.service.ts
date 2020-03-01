@@ -32,7 +32,7 @@ export class TrainingService {
   }
 
   completeExcercise() {
-    this.excercises.push({ ...this._runningExcercise, date: moment(), state: Status.completed });
+    this.excercises.push({ ...this._runningExcercise, date: moment().toDate(), state: Status.completed });
     this._runningExcercise = null;
     this.ongoingTrainingSubject$.next(false);
 
@@ -43,7 +43,7 @@ export class TrainingService {
       ...this._runningExcercise,
       calories: this._runningExcercise.duration * progress / 100,
       duration: this._runningExcercise.duration * progress / 100,
-      date: moment(),
+      date: moment().toDate(),
       state: Status.cancelled
     });
     this._runningExcercise = null;
@@ -52,6 +52,10 @@ export class TrainingService {
 
   get runningExcercise() {
     return this._runningExcercise ? { ...this._runningExcercise } : null;
+  }
+
+  getCompletedOrCancelledExercises() {
+    return this.excercises.slice();
   }
 
 }
