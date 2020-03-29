@@ -9,6 +9,9 @@ import { MatFitnessTrackerLibModule } from 'projects/mat-fitness-tracker-lib/src
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AboutComponent } from './about/about.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { AboutComponent } from './about/about.component';
     MatFitnessTrackerLibModule,
     AppRoutingModule,
     MatButtonModule,
-    MatSidenavModule
+    MatSidenavModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

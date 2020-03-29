@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PastTrainingsColumns, Excercise } from '../training.model';
 import { MatTableDataSource } from '@angular/material';
 import { TrainingService } from '../training.service';
+import { TrainingDataSource } from '../training.datasource';
 
 @Component({
   selector: 'lib-past-trainings',
@@ -11,13 +12,15 @@ import { TrainingService } from '../training.service';
 export class PastTrainingsComponent implements OnInit {
 
   pastTrainingsColumns = PastTrainingsColumns;
-  dataSource = new MatTableDataSource<Excercise>();
+  dataSource: TrainingDataSource; // new MatTableDataSource<Excercise>();
   displayedColumns = Object.values(PastTrainingsColumns);
 
   constructor(private trainingService: TrainingService) { }
 
   ngOnInit() {
-    this.dataSource.data = this.trainingService.getCompletedOrCancelledExercises();
+    // this.dataSource.data = this.trainingService.fetchCompletedOrCancelledExercises();
+    this.dataSource = new TrainingDataSource(this.trainingService);
+    this.dataSource.loadTrainings();
   }
 
 }
