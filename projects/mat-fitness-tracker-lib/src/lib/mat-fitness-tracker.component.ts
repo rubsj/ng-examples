@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'lib-mat-fitness-tracker',
@@ -8,10 +9,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class MatFitnessTrackerComponent implements OnInit {
   @ViewChild('sideNav', { static: false }) sideNav;
 
-  constructor() { }
+  constructor(private authService : AuthService) { }
 
   ngOnInit() {
     console.log('mat fitness tracker called ');
+    this.authService.initAuthListener();
   }
   onToggle() {
     this.sideNav.toggle();

@@ -3,6 +3,7 @@ import { PastTrainingsColumns, Excercise } from '../training.model';
 import { MatTableDataSource } from '@angular/material';
 import { TrainingService } from '../training.service';
 import { TrainingDataSource } from '../training.datasource';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'lib-past-trainings',

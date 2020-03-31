@@ -3,7 +3,8 @@ import { Excercise } from './training.model';
 import { CollectionViewer } from '@angular/cdk/collections';
 import { Observable, BehaviorSubject, of } from 'rxjs';
 import { TrainingService } from './training.service';
-import { catchError, finalize } from 'rxjs/operators';
+import { catchError, finalize, filter } from 'rxjs/operators';
+import { AuthService } from '../auth/auth.service';
 
 export class TrainingDataSource implements DataSource<Excercise> {
     private trainingsSubject = new BehaviorSubject<Excercise[]>([]);
@@ -17,8 +18,9 @@ export class TrainingDataSource implements DataSource<Excercise> {
         this.trainingService.fetchCompletedOrCancelledExercises()
             .pipe(
                 catchError((err) => {
-                    console.log('ctching the error' , err);
-                    return of([]); }),
+                    console.log('ctching the error', err);
+                    return of([]);
+                }),
                 finalize(() => {
                     console.log('finalize called');
                     this.loadingSubject.next(false);

@@ -11,7 +11,6 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AboutComponent } from './about/about.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     MatButtonModule,
     MatSidenavModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
