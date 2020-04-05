@@ -34,6 +34,10 @@
     </mat-form-field>
       <mat-checkbox ngModel name="agree" required color='primary' #agree="ngModel">Agree to participate</mat-checkbox>
       <mat-error *ngIf="agree.hasError('required') && (agree.touched || agree.dirty || f.submitted)">oops you forgot to agree</mat-error>
-    <button mat-raised-button color='primary' [disabled]="f.invalid" class="button-position">Submit</button>
+    <ng-template #button>
+      <button mat-raised-button color='primary' [disabled]="f.invalid" class="button-position">Submit</button>
+    </ng-template>
+     
+    <mat-spinner *ngIf="loading$ |async; else button"></mat-spinner>
   </form>
 </section>

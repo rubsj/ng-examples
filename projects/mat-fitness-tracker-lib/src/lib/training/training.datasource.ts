@@ -3,41 +3,25 @@ import { Excercise } from './training.model';
 import { CollectionViewer } from '@angular/cdk/collections';
 import { Observable, BehaviorSubject, of } from 'rxjs';
 import { TrainingService } from './training.service';
-import { catchError, finalize, filter } from 'rxjs/operators';
+import { catchError, finalize, filter, tap } from 'rxjs/operators';
 import { AuthService } from '../auth/auth.service';
+import { loaderIndicateOperator, loaderPrepareOperator } from '../shared/util';
 
 export class TrainingDataSource implements DataSource<Excercise> {
-    private trainingsSubject = new BehaviorSubject<Excercise[]>([]);
-    private loadingSubject = new BehaviorSubject<boolean>(false);
+    private loadingSubject = new BehaviorSubject<boolean>(true);
     public loading$ = this.loadingSubject.asObservable();
 
     constructor(private trainingService: TrainingService) { }
 
-    loadTrainings() {
-        this.loadingSubject.next(true);
-        this.trainingService.fetchCompletedOrCancelledExercises()
-            .pipe(
-                catchError((err) => {
-                    console.log('ctching the error', err);
-                    return of([]);
-                }),
-                finalize(() => {
-                    console.log('finalize called');
-                    this.loadingSubject.next(false);
-                }))
-            .subscribe((trainings: Excercise[]) => {
-                this.loadingSubject.next(false);
-                this.trainingsSubject.next(trainings);
-            });
-    }
-
     connect(collectionViewer: CollectionViewer): Observable<Excercise[]> {
         console.log('Connecting data source');
-        return this.trainingsSubject.asObservable();
+        return this.trainingService.fetchCompletedOrCancelledExercises()
+            .pipe(
+                finalize(() => this.loadingSubject.next(false)),
+                tap(() => this.loadingSubject.next(false)));
     }
     disconnect(collectionViewer: CollectionViewer): void {
         this.loadingSubject.complete();
-        this.trainingsSubject.complete();
     }
 
 }

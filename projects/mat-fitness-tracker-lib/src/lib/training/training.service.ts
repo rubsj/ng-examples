@@ -5,6 +5,7 @@ import { Subject, Observable } from 'rxjs';
 import * as moment from 'moment';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { map, find, filter, tap, finalize } from 'rxjs/operators';
+import { UIService } from '../shared/ui.service';
 
 @Injectable({
   providedIn: 'root'
@@ -23,21 +24,23 @@ export class TrainingService {
   private ongoingTrainingSubject$ = new Subject<boolean>();
   ongoingTraining$ = this.ongoingTrainingSubject$.asObservable();
 
-  constructor(private db: AngularFirestore) { }
+  constructor(private db: AngularFirestore) {
+  }
 
   fetchAvailableTraining(): Observable<Excercise[]> {
-    return this.db.collection('availableExcercises').snapshotChanges().pipe(map(docArray => {
-      return docArray.map(doc => {
-        return {
-          id: doc.payload.doc.id,
-          //   ...doc.payload.doc.data({ serverTimestamps: 'none' }) as {}
-          // cool short version but then types does not get picked up properly
-          name: (doc.payload.doc.data() as any).name,
-          duration: (doc.payload.doc.data() as any).duration,
-          calories: (doc.payload.doc.data() as any).calories,
-        } as Excercise;
-      });
-    }));
+    return this.db.collection('availableExcercises').snapshotChanges().pipe(
+      map(docArray => {
+        return docArray.map(doc => {
+          return {
+            id: doc.payload.doc.id,
+            //   ...doc.payload.doc.data({ serverTimestamps: 'none' }) as {}
+            // cool short version but then types does not get picked up properly
+            name: (doc.payload.doc.data() as any).name,
+            duration: (doc.payload.doc.data() as any).duration,
+            calories: (doc.payload.doc.data() as any).calories,
+          } as Excercise;
+        });
+      }));
   }
 
   startExcercise(slectedId: string) {
@@ -72,8 +75,8 @@ export class TrainingService {
     return this._runningExcercise ? { ...this._runningExcercise } : null;
   }
 
-  fetchCompletedOrCancelledExercises() {
-    return this.db.collection('finishedExcercises').valueChanges();
+  fetchCompletedOrCancelledExercises(): Observable<Excercise[]> {
+    return this.db.collection<Excercise>('finishedExcercises').valueChanges();
   }
 
   private addDataToDatabase(excercise: Excercise) {
