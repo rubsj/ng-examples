@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { MatFitnessTrackerComponent } from './mat-fitness-tracker.component';
 import { MaterialModule } from './material.module';
-import { SignupComponent } from './auth/signup/signup.component';
-import { LoginComponent } from './auth/login/login.component';
 import { TrainingComponent } from './training/training.component';
 import { CurrentTrainingComponent } from './training/current-training/current-training.component';
 import { NewTrainingComponent } from './training/new-training/new-training.component';
@@ -17,6 +15,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { StopTrainingComponent } from './training/current-training/stop-training.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthModule } from './auth/auth.module';
+import { TrainingModule } from './training/training.module';
 
 
 
@@ -24,26 +24,17 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 @NgModule({
   declarations: [
     MatFitnessTrackerComponent,
-    SignupComponent,
-    LoginComponent,
-    TrainingComponent,
-    CurrentTrainingComponent,
-    NewTrainingComponent,
-    PastTrainingsComponent,
     HeaderComponent,
     SidenavListComponent,
     WelcomeComponent,
-    StopTrainingComponent
   ],
   imports: [
     MaterialModule,
     MatFitnessTrackerRouterModule,
     FlexLayoutModule,
-    FormsModule,
-    ReactiveFormsModule,
     CommonModule,
-    AngularFirestoreModule,
-    AngularFireAuthModule
+    AuthModule,
+    TrainingModule
   ],
   exports: [MatFitnessTrackerComponent],
   entryComponents: [StopTrainingComponent]

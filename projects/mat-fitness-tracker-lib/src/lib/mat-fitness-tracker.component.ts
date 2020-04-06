@@ -9,7 +9,7 @@ import { AuthService } from './auth/auth.service';
 export class MatFitnessTrackerComponent implements OnInit {
   @ViewChild('sideNav', { static: false }) sideNav;
 
-  constructor(private authService : AuthService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
     console.log('mat fitness tracker called ');

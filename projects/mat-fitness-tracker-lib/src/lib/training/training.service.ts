@@ -1,10 +1,10 @@
 import { Excercise, Status } from './training.model';
 import { Injectable } from '@angular/core';
 import { validateBasis } from '@angular/flex-layout';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, throwError, of } from 'rxjs';
 import * as moment from 'moment';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { map, find, filter, tap, finalize } from 'rxjs/operators';
+import { map, find, filter, tap, finalize, retry, catchError } from 'rxjs/operators';
 import { UIService } from '../shared/ui.service';
 
 @Injectable({
@@ -24,7 +24,7 @@ export class TrainingService {
   private ongoingTrainingSubject$ = new Subject<boolean>();
   ongoingTraining$ = this.ongoingTrainingSubject$.asObservable();
 
-  constructor(private db: AngularFirestore) {
+  constructor(private db: AngularFirestore, private uIService: UIService) {
   }
 
   fetchAvailableTraining(): Observable<Excercise[]> {
@@ -40,6 +40,13 @@ export class TrainingService {
             calories: (doc.payload.doc.data() as any).calories,
           } as Excercise;
         });
+        // throw new Error('fetch failed');
+      }),
+      retry(1),
+      catchError(error => {
+        console.log('error ', error);
+        this.uIService.showSnackBar(`${error.message} fetching available trainings`, 'ok', 3000);
+        return of([]);
       }));
   }
 
@@ -84,6 +91,7 @@ export class TrainingService {
       .then(val => console.log('added successfully ', val))
       .catch(err => {
         console.log('caught error ', err);
+        this.uIService.showSnackBar('got error while adding/editing data', 'ok', 3000);
         throw new Error(err);
       });
   }
