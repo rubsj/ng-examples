@@ -8,7 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "mat-app": "ng serve --project=practice-material-app"
+    "mat-app": "ng serve --project=practice-material-app",
+    "core-samples" : "ng serve --project=core-samples-app",
+    "router-learning" :"ng serve --project=router-learning-app",
+    "practice-samples": "ng serve --project=practice-samples-app"
   },
   "private": true,
   "dependencies": {
