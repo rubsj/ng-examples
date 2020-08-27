@@ -9,8 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "mat-app": "ng serve --project=practice-material-app",
-    "core-samples" : "ng serve --project=core-samples-app",
-    "router-learning" :"ng serve --project=router-learning-app",
+    "core-samples": "ng serve --project=core-samples-app",
+    "router-learning": "ng serve --project=router-learning-app",
     "practice-samples": "ng serve --project=practice-samples-app"
   },
   "private": true,
@@ -41,9 +41,9 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.803.23",
-    "@angular-devkit/build-ng-packagr": "~0.803.21",
-    "@angular/cli": "~8.3.21",
+    "@angular-devkit/build-angular": "^0.803.29",
+    "@angular-devkit/build-ng-packagr": "~0.803.29",
+    "@angular/cli": "~8.3.29",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
     "@types/jasmine": "~3.3.8",
