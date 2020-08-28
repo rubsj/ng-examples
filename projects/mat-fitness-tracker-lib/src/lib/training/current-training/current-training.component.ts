@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { StopTrainingComponent } from './stop-training.component';
 import { interval, Subject, NEVER, defer, Observable } from 'rxjs';
 import { switchMap, materialize, dematerialize, takeUntil, withLatestFrom, filter, map, share } from 'rxjs/operators';

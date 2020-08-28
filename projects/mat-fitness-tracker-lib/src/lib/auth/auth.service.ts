@@ -36,7 +36,7 @@ export class AuthService {
 
   registerUser(authData: AuthData) {
     this.uiService.loadingStateChanged.next(true);
-    this.ngFireAuth.auth.createUserWithEmailAndPassword(authData.email, authData.password)
+    this.ngFireAuth.createUserWithEmailAndPassword(authData.email, authData.password)
       .then(() => {
         console.log('create user success');
         this.uiService.loadingStateChanged.next(false);
@@ -49,7 +49,7 @@ export class AuthService {
 
   login(authData: AuthData) {
     this.uiService.loadingStateChanged.next(true);
-    this.ngFireAuth.auth.signInWithEmailAndPassword(authData.email, authData.password)
+    this.ngFireAuth.signInWithEmailAndPassword(authData.email, authData.password)
       .then(() => {
         this.uiService.loadingStateChanged.next(false);
         console.log('signin successful');
@@ -60,7 +60,7 @@ export class AuthService {
   }
 
   logout() {
-    this.ngFireAuth.auth.signOut();
+    this.ngFireAuth.signOut();
   }
 
   isAuth() {
