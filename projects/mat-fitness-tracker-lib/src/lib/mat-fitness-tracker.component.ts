@@ -7,7 +7,7 @@ import { AuthService } from './auth/auth.service';
   styleUrls: ['./mat-fitness-tracker.component.scss']
 })
 export class MatFitnessTrackerComponent implements OnInit {
-  @ViewChild('sideNav', { static: false }) sideNav;
+  @ViewChild('sideNav') sideNav;
 
   constructor(private authService: AuthService) { }
 

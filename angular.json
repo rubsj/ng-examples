@@ -22,7 +22,7 @@
             "main": "projects/core-samples-app/src/main.ts",
             "polyfills": "projects/core-samples-app/src/polyfills.ts",
             "tsConfig": "projects/core-samples-app/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/core-samples-app/src/favicon.ico",
               "projects/core-samples-app/src/assets"
@@ -50,7 +50,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -154,7 +153,7 @@
             "main": "projects/practice-samples-app/src/main.ts",
             "polyfills": "projects/practice-samples-app/src/polyfills.ts",
             "tsConfig": "projects/practice-samples-app/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/practice-samples-app/src/favicon.ico",
               "projects/practice-samples-app/src/assets"
@@ -177,7 +176,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -269,7 +267,12 @@
             "tsConfig": "projects/fist-material-sample-lib/tsconfig.lib.json",
             "project": "projects/fist-material-sample-lib/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/fist-material-sample-lib/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -311,7 +314,7 @@
             "main": "projects/practice-material-app/src/main.ts",
             "polyfills": "projects/practice-material-app/src/polyfills.ts",
             "tsConfig": "projects/practice-material-app/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/practice-material-app/src/favicon.ico",
               "projects/practice-material-app/src/assets"
@@ -335,7 +338,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -428,7 +430,12 @@
             "tsConfig": "projects/mat-fitness-tracker-lib/tsconfig.lib.json",
             "project": "projects/mat-fitness-tracker-lib/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/mat-fitness-tracker-lib/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -470,7 +477,7 @@
             "main": "projects/router-learning-app/src/main.ts",
             "polyfills": "projects/router-learning-app/src/polyfills.ts",
             "tsConfig": "projects/router-learning-app/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/router-learning-app/src/favicon.ico",
               "projects/router-learning-app/src/assets"
@@ -497,7 +504,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,

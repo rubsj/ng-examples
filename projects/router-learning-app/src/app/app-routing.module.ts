@@ -6,7 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 
 const routes: Routes = [
-  { path: 'posts', loadChildren: './post/post.module#PostModule' }, //projects\router-learning-app\src\app\post\post.module.ts
+  { path: 'posts', loadChildren: () => import('./post/post.module').then(m => m.PostModule) }, //projects\router-learning-app\src\app\post\post.module.ts
   { path: 'about', component: AboutComponent },
   { path: '', pathMatch: 'full', redirectTo: '/posts' },
   { path: '**', component: PageNotFoundComponent }
