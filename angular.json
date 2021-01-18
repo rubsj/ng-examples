@@ -582,6 +582,127 @@
           }
         }
       }
+    },
+    "d3-sample-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/d3-sample-app",
+      "sourceRoot": "projects/d3-sample-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/d3-sample-app",
+            "index": "projects/d3-sample-app/src/index.html",
+            "main": "projects/d3-sample-app/src/main.ts",
+            "polyfills": "projects/d3-sample-app/src/polyfills.ts",
+            "tsConfig": "projects/d3-sample-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/d3-sample-app/src/favicon.ico",
+              "projects/d3-sample-app/src/assets"
+            ],
+            "styles": [
+              "projects/d3-sample-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/d3-sample-app/src/environments/environment.ts",
+                  "with": "projects/d3-sample-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "d3-sample-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "d3-sample-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "d3-sample-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/d3-sample-app/src/test.ts",
+            "polyfills": "projects/d3-sample-app/src/polyfills.ts",
+            "tsConfig": "projects/d3-sample-app/tsconfig.spec.json",
+            "karmaConfig": "projects/d3-sample-app/karma.conf.js",
+            "assets": [
+              "projects/d3-sample-app/src/favicon.ico",
+              "projects/d3-sample-app/src/assets"
+            ],
+            "styles": [
+              "projects/d3-sample-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/d3-sample-app/tsconfig.app.json",
+              "projects/d3-sample-app/tsconfig.spec.json",
+              "projects/d3-sample-app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/d3-sample-app/e2e/protractor.conf.js",
+            "devServerTarget": "d3-sample-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "d3-sample-app:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "core-samples-app"

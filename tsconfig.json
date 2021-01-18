@@ -42,6 +42,12 @@
     },
     {
       "path": "./projects/router-learning-app/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/d3-sample-app/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/d3-sample-app/tsconfig.spec.json"
     }
   ]
 }

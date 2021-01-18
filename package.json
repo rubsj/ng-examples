@@ -11,7 +11,8 @@
     "mat-app": "ng serve --project=practice-material-app",
     "core-samples": "ng serve --project=core-samples-app",
     "router-learning": "ng serve --project=router-learning-app",
-    "practice-samples": "ng serve --project=practice-samples-app"
+    "practice-samples": "ng serve --project=practice-samples-app",
+    "d3-app": "ng serve --project=d3-sample-app"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +31,7 @@
     "@angular/router": "~10.0.14",
     "bootstrap": "^4.5.2",
     "core-js": "^3.6.5",
+    "d3": "^6.3.1",
     "firebase": "^7.19.1",
     "jquery": "^3.5.1",
     "moment": "^2.27.0",
@@ -40,14 +42,16 @@
     "zone.js": "~0.11.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1000.8",
+    "@angular-devkit/build-angular": "^0.1100.7",
     "@angular-devkit/build-ng-packagr": "~0.1000.8",
     "@angular/cli": "~10.0.8",
     "@angular/compiler-cli": "~10.0.14",
     "@angular/language-service": "~10.0.14",
+    "@types/d3": "^6.2.0",
     "@types/jasmine": "~3.5.14",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^14.6.1",
+    "angular-in-memory-web-api": "^0.11.0",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
