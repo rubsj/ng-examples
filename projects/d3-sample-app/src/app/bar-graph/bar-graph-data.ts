@@ -1,38 +1,44 @@
-export const salesData = [
+export interface Sales {
+    day : string;
+    sales : number;
+    bestSeller : string
+}
+
+export const salesData: Sales[] = [
     {
       "day": "Monday",
-      "sales": 242,
+      "sales": 42000,
       "bestSeller": "lemonade"
     },
     {
       "day": "Tuesday",
-      "sales": 256,
+      "sales": 56000,
       "bestSeller": "lemonade"
     },
     {
       "day": "Wednesday",
-      "sales": 137,
+      "sales": 37000,
       "bestSeller": "water"
     },
     {
       "day": "Thursday",
-      "sales": 343,
+      "sales": 143000,
       "bestSeller": "iced tea"
     },
     {
       "day": "Friday",
-      "sales": 459,
+      "sales": 259000,
       "bestSeller": "iced tea"
     },
     {
       "day": "Saturday",
-      "sales": 578,
+      "sales": 278000,
       "bestSeller": "lemonade"
     },
     {
       "day": "Sunday",
-      "sales": 470,
+      "sales": 270000,
       "bestSeller": "pink lemonade"
     }
-  ]
+  ];
   
