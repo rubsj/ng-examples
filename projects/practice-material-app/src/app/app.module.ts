@@ -12,21 +12,24 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AboutComponent } from './about/about.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { MenuItemComponent } from './menu-item/menu-item.component';
+import { MaterialModule } from './material.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     NavBarComponent,
-    AboutComponent
+    AboutComponent,
+    MenuItemComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatFitnessTrackerLibModule,
     AppRoutingModule,
-    MatButtonModule,
-    MatSidenavModule,
+    MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
