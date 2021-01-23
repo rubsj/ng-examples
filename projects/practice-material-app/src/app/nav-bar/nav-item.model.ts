@@ -4,7 +4,7 @@ export interface NavItem {
     iconName?: string;
     route?: string;
     children?: NavItem[];
-}
+} 
 
 export const navItems: NavItem[] = [
     {
@@ -22,6 +22,20 @@ export const navItems: NavItem[] = [
                 route: 'fitness-tracker'
             }
         ]
+    },{
+        displayName: 'CDK Concept Samples',
+        iconName: 'all_inclusive',
+        children: [{
+            displayName: 'Overlay Samples',
+            iconName:'eject',
+            children:[
+               {
+                displayName : 'Color picker',
+                iconName: 'palette',
+                route: 'color-picker'
+               }
+            ]
+        }]
     },
     {
         displayName: 'Mat Concept Samples',
@@ -32,10 +46,12 @@ export const navItems: NavItem[] = [
                 iconName: 'menu_book',
                 children: [{
                     displayName: 'Menu Sample 1',
+                    iconName:'science',
                     disabled: true,
                 },
                 {
                     displayName: 'Menu Sample 2',
+                    iconName:'science',
                     disabled: true,
                 }]
 
@@ -49,3 +65,4 @@ export const navItems: NavItem[] = [
     }
   
 ];
+

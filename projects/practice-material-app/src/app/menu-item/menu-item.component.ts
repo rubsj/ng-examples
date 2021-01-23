@@ -7,13 +7,14 @@ import { NavItem } from '../nav-bar/nav-item.model';
   styleUrls: ['./menu-item.component.scss']
 })
 export class MenuItemComponent implements OnInit {
-  @Input() items : NavItem[];
+  @Input() items: NavItem[];
   // this viewchild is needed for menutrigger for directive
-  @ViewChild('childMenu') public childMenu;
+  // static true is must to initilize the submenus properly
+  @ViewChild('childMenu', { static: true }) public childMenu;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
   }
 
+  ngOnInit() {
+  }
 }

@@ -2,7 +2,7 @@
   <span *ngFor="let item of navItems">
     <span *ngIf="item?.children?.length > 0; else leaf">
       <button mat-button [matMenuTriggerFor]="menu.childMenu" [disabled]="item.disabled">
-        <mat-icon>{{item.iconName}}</mat-icon>
+        <mat-icon *ngIf="item.iconName">{{item.iconName}}</mat-icon>
         <span>{{item.displayName}}</span>
       </button>
       <app-menu-item #menu [items]="item.children"></app-menu-item>
@@ -11,11 +11,11 @@
     <ng-template #leaf>
       <span>
         <button mat-button [routerLink]="item.route" [disabled]="item.disabled">
-          <mat-icon>{{item.iconName}}</mat-icon>
+          <mat-icon *ngIf="item.iconName">{{item.iconName}}</mat-icon>
           <span>{{item.displayName}}</span>
         </button>
       </span>
     </ng-template>
 
-  </span>
+  </span> 
 </mat-toolbar>

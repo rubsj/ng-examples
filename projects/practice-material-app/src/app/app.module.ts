@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +12,9 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { MenuItemComponent } from './menu-item/menu-item.component';
 import { MaterialModule } from './material.module';
+import { AppOverlayModule } from './cdk/overlay/overlay.module';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,10 +27,14 @@ import { MaterialModule } from './material.module';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatFitnessTrackerLibModule,
     AppRoutingModule,
-    MaterialModule,
+    AppOverlayModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
