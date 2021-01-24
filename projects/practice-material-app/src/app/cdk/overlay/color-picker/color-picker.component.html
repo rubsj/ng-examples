@@ -11,10 +11,13 @@
             <div role="option" *ngFor="let color of colors;" 
                 [style.background]="color.hex"
                 [attr.aria-label]="color.name" [attr.aria-selected]="color.hex == selectedColor"
-                (click)="onSelectColor(color)">
+                (click)="onSelectColor(color , $event)">
             </div>
-
         </div>
+        <div>
+            <button type="button" class="color-selector">Close Selector</button>
+        </div>
+        
     </div>
 
 </ng-template>

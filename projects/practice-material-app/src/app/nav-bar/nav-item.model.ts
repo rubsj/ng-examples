@@ -33,7 +33,12 @@ export const navItems: NavItem[] = [
                 displayName : 'Color picker',
                 iconName: 'palette',
                 route: 'color-picker'
-               }
+               },
+               {
+                displayName : 'Mixed Overlay Samples',
+                iconName: 'miscellaneous_services',
+                route: 'mixed-overlay'
+               },
             ]
         }]
     },

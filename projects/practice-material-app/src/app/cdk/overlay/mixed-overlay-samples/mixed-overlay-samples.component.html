@@ -1,0 +1,82 @@
+<mat-tab-group dynamicHeight>
+    <mat-tab label="Example 1">
+        <div class="example-box mat-elevation-z4">
+            <div>
+                <p>
+                    A Portal is a piece of UI that can be dynamically rendered to an open slot on the page.
+                </p>
+                <p>
+                    The "piece of UI" can be either a Component, a TemplateRef or a DOM element and the "open slot" is a
+                    PortalOutlet.
+                </p>
+                <p>
+                    Portals and PortalOutlets are low-level building blocks that other concepts, such as overlays, are
+                    built upon.
+                </p>
+                <p>Calling <code>overlay.create()</code> will return an OverlayRef instance. This instance is a handle
+                    for managing that specific overlay.</p>
+                <p>The <i>OverlayRef</i> is a PortalOutlet- once created, content can be added by attaching a Portal.
+                    See the documentation on portals for further information.</p>
+                <p>
+                    In this example we create overlay programatically using <b>component portal</b> approach
+                    <br>
+                    BasicPanelLoadComponent component will be loaded with backdrop and global poistionin startegy via
+                    code
+                    <br>
+                    we subscribe to overlayref to close the overlay in this approach
+                </p>
+            </div>
+
+            <button type="button" (click)="openGlobalComponentPanel()"> Load Overlay </button>
+        </div>
+    </mat-tab>
+    <mat-tab label="Example 2">
+        <div class="example-box mat-elevation-z4">
+            <div>
+                <p>
+                    In this example we create overlay programatically using <b>template portal</b> approach
+                    <br> without backdrop and overlay opens on mouse enter and closes on mouse leave
+                    <br> overlayref since getting closed using dispose on mouse leav no need for subscribing to it
+                </p>
+            </div>
+            <button type="button" (mouseenter)="openTemplatePanel()" (mouseleave)="closeTemplatePanel()"> Load Overlay
+                on Mouse enter and close on exit </button>
+        </div>
+    </mat-tab>
+    <mat-tab label="Example 3">
+        <div class="example-box mat-elevation-z4">
+            <div>
+                <p>In this example we create overlay programatically using component portal approach and attaching it to
+                    button</p>
+                <p>We are setting the backdrop as transparent</p>
+            </div>
+            <button type="button" cdkOverlayOrigin (click)="openLocalComponentPanel()"> Attach Overlay to this button
+            </button>
+        </div>
+    </mat-tab>
+    <mat-tab label="Example 4">
+        <div class="example-box mat-elevation-z4">
+            <div>
+                <p>In this example we create overlay completly in template using directive approach and attach to button
+                </p>
+            </div>
+            <button type="button" cdkOverlayOrigin #trigger="cdkOverlayOrigin" (click)="openOverlay()">Open overlay
+                defined in html</button>
+        </div>
+    </mat-tab>
+
+</mat-tab-group>
+
+<!-- Template to load into an overlay. for example 2 -->
+<ng-template cdkPortal>
+    <p>This is a template for overlay</p>
+</ng-template>
+
+<ng-template cdkConnectedOverlay 
+             [cdkConnectedOverlayOrigin]="trigger"
+             [cdkConnectedOverlayHeight]="300"
+             [cdkConnectedOverlayHasBackdrop]="true" 
+             [cdkConnectedOverlayOpen]="isOverlayOpen" 
+             (backdropClick)="closeOverlay()">
+    <p style="background-color: mediumpurple; border: 2px solid black;">This is a template for overlay</p>
+</ng-template>

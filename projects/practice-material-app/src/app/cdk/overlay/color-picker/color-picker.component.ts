@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, HostListener, QueryList, ViewChildren } from '@angular/core';
 import { ColorPickerOptionDirective } from './color-picker-option.directive';
 import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
 
@@ -35,15 +35,22 @@ export class ColorPickerComponent implements AfterViewInit {
     this.keyManager.onKeydown(event);
   }
 
-  onSelectColor(color) {
+  onSelectColor(color: any, event: MouseEvent) {
     console.log('select color called with ', color);
     this.selectedColor = color.hex;
-    this.isOpen = false;
+    event.stopPropagation();
   }
 
-  buttonClicked(event) {
-    console.log('button click event called');
+  buttonClicked(event: MouseEvent) {
+    console.log('button click event called ', event);
     this.isOpen = !this.isOpen;
+    event.stopPropagation();
+  }
+
+  @HostListener('window:click')
+  onClickOutside() {
+    console.log('window was clicked ');
+    this.isOpen = false;
   }
 
 }

@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AboutComponent } from './about/about.component';
 import { ColorPickerComponent } from './cdk/overlay/color-picker/color-picker.component';
+import { MixedOverlaySamplesComponent } from './cdk/overlay/mixed-overlay-samples/mixed-overlay-samples.component';
 
 
 /* const routes: Routes = [
@@ -28,6 +29,7 @@ import { ColorPickerComponent } from './cdk/overlay/color-picker/color-picker.co
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'color-picker' , component: ColorPickerComponent},
+  {path: 'mixed-overlay', component: MixedOverlaySamplesComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
