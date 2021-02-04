@@ -7,6 +7,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AboutComponent } from './about/about.component';
 import { ColorPickerComponent } from './cdk/overlay/color-picker/color-picker.component';
 import { MixedOverlaySamplesComponent } from './cdk/overlay/mixed-overlay-samples/mixed-overlay-samples.component';
+import { MixedDragDropSamplesComponent } from './cdk/drag-drop/mixed-drag-drop-samples/mixed-drag-drop-samples.component';
 
 
 /* const routes: Routes = [
@@ -28,14 +29,15 @@ import { MixedOverlaySamplesComponent } from './cdk/overlay/mixed-overlay-sample
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
-  { path: 'color-picker' , component: ColorPickerComponent},
-  {path: 'mixed-overlay', component: MixedOverlaySamplesComponent},
+  { path: 'color-picker', component: ColorPickerComponent },
+  { path: 'mixed-overlay', component: MixedOverlaySamplesComponent },
+  { path: 'mixed-drag-drop', component: MixedDragDropSamplesComponent },
   { path: '', redirectTo: 'about', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: false } )],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,7 +1,6 @@
 import { CdkOverlayOrigin, Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
-import { CdkPortal, ComponentPortal, Portal, TemplatePortal, TemplatePortalDirective } from '@angular/cdk/portal';
-import { ViewChildren } from '@angular/core';
-import { Component, ViewContainerRef, OnDestroy, ViewChild, QueryList } from '@angular/core';
+import { CdkPortal, ComponentPortal, TemplatePortal } from '@angular/cdk/portal';
+import { Component, ViewContainerRef, OnDestroy, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { BasicPanelLoadComponent } from './basic-panel-load.component';

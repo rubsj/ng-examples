@@ -43,6 +43,7 @@ import { PlatformModule } from '@angular/cdk/platform';
 import { PortalModule } from '@angular/cdk/portal';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CdkTableModule } from '@angular/cdk/table';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 const matModules = [
    // CDK
@@ -54,6 +55,7 @@ const matModules = [
    PortalModule,
    CdkStepperModule,
    CdkTableModule,
+   DragDropModule,
 
   //material
   MatAutocompleteModule,

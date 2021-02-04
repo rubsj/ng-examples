@@ -1,0 +1,42 @@
+<mat-tab-group dynamicHeight>
+    <mat-tab label="Reordering lists">
+        <div class="example-box mat-elevation-z4">
+            <div>
+                <p>In this example we will perform drag and drop within list</p>
+            </div>
+            <div cdkDropList class="item-list" (cdkDropListDropped)="reorderNutrient($event)">
+                <div class="item-block" *ngFor="let nutrient of nutrients" cdkDrag>{{nutrient}}</div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Transfer Items Between Lists">
+        <div class="example-box mat-elevation-z4">
+            <div>
+                <p>In this example we will perform drag and drop between two lists</p>
+            </div>
+            <div class="book-example-container">
+                <div class="example-box mat-elevation-z1">
+                    <h2>Books To Read</h2>
+                    <div cdkDropList #toReadBooks="cdkDropList" [cdkDropListData]="books"
+                        [cdkDropListConnectedTo]="[readBooks]" class="item-list"
+                        (cdkDropListDropped)="dropbook($event)">
+                        <div class="item-block" *ngFor="let book of books" cdkDrag>
+                            {{book.name}} by {{book.author}}
+                        </div>
+                    </div>
+                </div>
+                <div class="example-box mat-elevation-z1">
+                    <h2>Books Completed Reading</h2>
+                    <div cdkDropList #readBooks="cdkDropList"
+                         [cdkDropListData]="completedBooks"
+                        [cdkDropListConnectedTo]="[toReadBooks]"
+                        class="item-list" (cdkDropListDropped)="dropbook($event)">
+                        <div class="item-block" *ngFor="let book of completedBooks" cdkDrag>
+                            {{book.name}} by {{book.author}}
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </mat-tab>
+</mat-tab-group>

@@ -4,7 +4,7 @@ export interface NavItem {
     iconName?: string;
     route?: string;
     children?: NavItem[];
-} 
+}
 
 export const navItems: NavItem[] = [
     {
@@ -22,23 +22,33 @@ export const navItems: NavItem[] = [
                 route: 'fitness-tracker'
             }
         ]
-    },{
+    }, {
         displayName: 'CDK Concept Samples',
         iconName: 'all_inclusive',
         children: [{
             displayName: 'Overlay Samples',
-            iconName:'eject',
-            children:[
-               {
-                displayName : 'Color picker',
-                iconName: 'palette',
-                route: 'color-picker'
-               },
-               {
-                displayName : 'Mixed Overlay Samples',
-                iconName: 'miscellaneous_services',
-                route: 'mixed-overlay'
-               },
+            iconName: 'eject',
+            children: [
+                {
+                    displayName: 'Color picker',
+                    iconName: 'palette',
+                    route: 'color-picker'
+                },
+                {
+                    displayName: 'Mixed Overlay Samples',
+                    iconName: 'miscellaneous_services',
+                    route: 'mixed-overlay'
+                },
+            ]
+        }, {
+            displayName: 'Drag&Drop Samples',
+            iconName: 'drag_indicator',
+            children: [
+                {
+                    displayName: 'Mixed Overlay Samples',
+                    iconName: 'miscellaneous_services',
+                    route: 'mixed-drag-drop'
+                },
             ]
         }]
     },
@@ -51,12 +61,12 @@ export const navItems: NavItem[] = [
                 iconName: 'menu_book',
                 children: [{
                     displayName: 'Menu Sample 1',
-                    iconName:'science',
+                    iconName: 'science',
                     disabled: true,
                 },
                 {
                     displayName: 'Menu Sample 2',
-                    iconName:'science',
+                    iconName: 'science',
                     disabled: true,
                 }]
 
@@ -68,6 +78,6 @@ export const navItems: NavItem[] = [
 
         ]
     }
-  
+
 ];
 
