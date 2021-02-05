@@ -16,6 +16,7 @@ import { AppOverlayModule } from './cdk/overlay/overlay.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppDragDropModule } from './cdk/drag-drop/drag-drop.module';
+import { FormModule } from './form/form.module';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { AppDragDropModule } from './cdk/drag-drop/drag-drop.module';
     AppRoutingModule,
     AppOverlayModule,
     AppDragDropModule,
+    FormModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],

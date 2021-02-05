@@ -1,0 +1,55 @@
+.card{
+    max-width: 800px;
+    margin: 8px  auto;
+    background-color: #e9e77d;
+
+    mat-radio-button{
+        padding-right: 1rem;
+    }
+
+    .contact-detail{
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-content: flex-start;
+        align-items: flex-start;
+        >mat-form-field:not(:first-child) {
+            margin-left: 1rem;
+        }
+    }
+
+    .display-content{
+        margin-top: 1rem;
+        background-color:  #888609;
+    }
+
+    .address-list{
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        align-items: flex-start;
+        /* margin-top: 1rem; */
+        .address{
+            display: flex;
+            flex-direction: row;
+            align-content: space-between;
+            align-items: center;
+            mat-label{
+                padding-right: 10px
+            }
+            mat-icon{
+                cursor: pointer;
+            }
+        }
+
+        .hidden-icon{
+            height: 24px;
+            width: 24px;
+        }
+    }
+}
+
+::ng-deep .mat-form-field-infix {
+    width: auto !important;
+}
+

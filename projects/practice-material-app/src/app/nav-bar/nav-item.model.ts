@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 export interface NavItem {
     displayName: string;
     disabled?: boolean;
@@ -76,6 +77,17 @@ export const navItems: NavItem[] = [
                 disabled: true
             }
 
+        ]
+    },
+    {
+        displayName: 'Form using Material',
+        iconName: 'dynamic_form',
+        children: [
+            {
+                displayName: 'Contact person or address',
+                iconName: 'contacts',
+                route: 'contact-sample1'
+            }
         ]
     }
 

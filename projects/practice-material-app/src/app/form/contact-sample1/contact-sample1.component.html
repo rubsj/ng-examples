@@ -1,0 +1,92 @@
+<mat-card class='card'>
+    <mat-card-title>Contact for Person or Company</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="contactFormGroup">
+            <mat-radio-group formControlName='contactType'>
+                <mat-radio-button *ngFor="let contactType of contactTypes" [value]=contactType>
+                    {{contactType}}
+                </mat-radio-button>
+
+            </mat-radio-group>
+
+            <div *ngIf="isPersonContact()" class="contact-detail">
+                <mat-form-field appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName='firstName'>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName='lastName'>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" color="accent">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName='dateOfBirth' required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker color="primary"></mat-datepicker>
+                    <mat-error *ngIf="contactFormGroup.get('dateOfBirth').hasError('minAge')">minimum 18 years of age
+                    </mat-error>
+                    <mat-error *ngIf="contactFormGroup.get('dateOfBirth').hasError('required')">minimum 18 years of age
+                        is required</mat-error>
+                </mat-form-field>
+
+            </div>
+            <div *ngIf="!isPersonContact()" class="contact-detail" yes le>
+                <mat-form-field appearance="outline">
+                    <mat-label>Company Name</mat-label>
+                    <input matInput formControlName='company'>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Date of Incorporation</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName='incorportationDate' required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="contactFormGroup.get('incorportationDate').hasError('incorporate')">company must
+                        be incorported in past</mat-error>
+                    <mat-error *ngIf="contactFormGroup.get('incorportationDate').hasError('required')">company must be
+                        incorported is required</mat-error>
+
+                </mat-form-field>
+
+            </div>
+
+            <div formArrayName="addresses">
+                <div *ngFor="let address of addresses.controls; let i=index" class='address-list'>
+                    <div class='address'>
+                        <mat-label>Address</mat-label>
+                        <app-address [formControlName]="i"></app-address>
+                        <mat-icon color="primary" (click)="addAddress()">add</mat-icon>
+                        <div *ngIf="i==0" [ngClass]="{'hidden-icon' : i==0}"></div>
+                        <mat-icon color="warn" (click)="removeAddress(i)" *ngIf="i>0" >remove
+                        </mat-icon>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </form>
+
+    </mat-card-content>
+    <mat-card-actions>
+        <button type="button" color="primary" mat-flat-button (click)="saveContact()"
+            [disabled]="!(contactFormGroup.valid && !contactFormGroup.pristine)">Save</button>
+    </mat-card-actions>
+</mat-card>
+
+<mat-card class="display-content">
+
+    <mat-list *ngFor="let contact of contacts | async">
+        <div mat-subheader>{{contact.firstName}} {{contact.lastName}} {{contact.company}} </div>
+        <mat-list-item *ngFor="let address of contact.addresses; let i=index">
+            {{address.street1}} {{address.street2}} {{address.city}} {{address.state}} {{address.zip}}
+
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+    </mat-list>
+
+</mat-card>

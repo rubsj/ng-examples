@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { ColorPickerComponent } from './cdk/overlay/color-picker/color-picker.component';
 import { MixedOverlaySamplesComponent } from './cdk/overlay/mixed-overlay-samples/mixed-overlay-samples.component';
 import { MixedDragDropSamplesComponent } from './cdk/drag-drop/mixed-drag-drop-samples/mixed-drag-drop-samples.component';
+import { ContactSample1Component } from './form/contact-sample1/contact-sample1.component';
 
 
 /* const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'color-picker', component: ColorPickerComponent },
   { path: 'mixed-overlay', component: MixedOverlaySamplesComponent },
   { path: 'mixed-drag-drop', component: MixedDragDropSamplesComponent },
+  { path: 'contact-sample1' , component: ContactSample1Component},
   { path: '', redirectTo: 'about', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
