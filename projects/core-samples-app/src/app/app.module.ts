@@ -6,17 +6,25 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CVAModule } from './cva/cva.module';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponentComponent } from './home-component/home-component.component';
+import { PasswordStrengthValidateComponent } from './password-strength-validate/password-strength-validate.component';
+import { PasswordStrengthValidateModule } from './password-strength-validate/password-strength-validate.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent,
+    HomeComponentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CVAModule,
-    TypeaheadModule.forRoot()
+    // TypeaheadModule.forRoot(),
+    PasswordStrengthValidateModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
