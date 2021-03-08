@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-body">
+        <button class="btn btn-primary" (click)="toggle()"> Toggle Open/Close</button>
+    </div>
+    <div class="card-body open-close-container" 
+        [@openClose]="isOpen? 'open' : 'closed'"
+        (@openClose.start)="onAnimationEvent($event)"
+        (@openClose.done)="onAnimationEvent($event)"
+        >
+        <p>
+            This box is now {{isOpen? 'Open' : 'Close'}}
+        </p>
+    </div>
+
+</div>

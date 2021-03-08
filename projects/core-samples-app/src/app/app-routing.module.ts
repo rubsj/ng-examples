@@ -5,15 +5,23 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { PasswordStrengthValidateComponent } from './password-strength-validate/password-strength-validate.component';
+import { OpenCloseAnimationComponent } from './animate/open-close-animation/open-close-animation.component';
 
 
 const routes: Routes = [
 
   {
-    path: 'home',    component: HomeComponentComponent },
+    path: 'home', component: HomeComponentComponent
+  },
   { path: 'bookRating', component: BookRatingComponent },
-  { path: 'asyncPwdStrength' , component: PasswordStrengthValidateComponent},
- // { path: ' ', component: AppComponent, pathMatch: 'full' }, // this path works only when there is space in path
+  { path: 'asyncPwdStrength', component: PasswordStrengthValidateComponent },
+  {
+    path: 'animate', children: [
+      /* { path: '', component: SimpleTransitionComponent , pathMatch: 'full'}, */
+      { path: 'openClose', component: OpenCloseAnimationComponent }
+    ]
+  },
+  // { path: ' ', component: AppComponent, pathMatch: 'full' }, // this path works only when there is space in path
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: '**', component: PageNotFoundComponent }
 ];
