@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { PasswordStrengthValidateComponent } from './password-strength-validate/password-strength-validate.component';
 import { OpenCloseAnimationComponent } from './animate/open-close-animation/open-close-animation.component';
+import { StateTransitionSample1Component } from './animate/state-transition-sample1/state-transition-sample1.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   {
     path: 'animate', children: [
       /* { path: '', component: SimpleTransitionComponent , pathMatch: 'full'}, */
-      { path: 'openClose', component: OpenCloseAnimationComponent }
+      { path: 'openClose', component: OpenCloseAnimationComponent },
+      { path: 'stateTransition1', component: StateTransitionSample1Component },
     ]
   },
   // { path: ' ', component: AppComponent, pathMatch: 'full' }, // this path works only when there is space in path

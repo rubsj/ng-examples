@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { PasswordStrengthValidateComponent } from './password-strength-validate/password-strength-validate.component';
 import { PasswordStrengthValidateModule } from './password-strength-validate/password-strength-validate.module';
+import { AnimateModule } from './animate/animate.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { PasswordStrengthValidateModule } from './password-strength-validate/pas
     CVAModule,
     // TypeaheadModule.forRoot(),
     PasswordStrengthValidateModule,
-
+    AnimateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
