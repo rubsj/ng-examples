@@ -1,0 +1,16 @@
+<app-preview-toolbar>
+    <mat-icon>description</mat-icon>
+    {{image.name}}
+</app-preview-toolbar>
+
+<div  >
+    <div class="spinner-wrapper" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div [@slideContent]='animationState' (@slideContent.start)="onAnimationStart($event)"
+    (@slideContent.done)="onAnimationDone($event)">
+   <!-- We need to hide image while spinner is runnig so we fadeout until loading is set to true-->
+   <img [src]="image.path" (load)="onLoad($event)" [@fade]="loading? 'fadeOut': 'fadeIn' ">
+    </div>
+ 
+</div>

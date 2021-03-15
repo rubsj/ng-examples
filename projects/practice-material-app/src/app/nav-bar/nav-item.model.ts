@@ -40,6 +40,11 @@ export const navItems: NavItem[] = [
                     iconName: 'miscellaneous_services',
                     route: 'mixed-overlay'
                 },
+                {
+                    displayName: 'File Preview Overlay',
+                    iconName: 'miscellaneous_services',
+                    route: 'file-preview-overlay'
+                },
             ]
         }, {
             displayName: 'Drag&Drop Samples',

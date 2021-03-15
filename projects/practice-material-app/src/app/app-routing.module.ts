@@ -9,6 +9,8 @@ import { ColorPickerComponent } from './cdk/overlay/color-picker/color-picker.co
 import { MixedOverlaySamplesComponent } from './cdk/overlay/mixed-overlay-samples/mixed-overlay-samples.component';
 import { MixedDragDropSamplesComponent } from './cdk/drag-drop/mixed-drag-drop-samples/mixed-drag-drop-samples.component';
 import { ContactSample1Component } from './form/contact-sample1/contact-sample1.component';
+import { FilePreviewComponent } from './cdk/overlay/file-preview/component/file-preview.component';
+
 
 
 /* const routes: Routes = [
@@ -32,6 +34,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'color-picker', component: ColorPickerComponent },
   { path: 'mixed-overlay', component: MixedOverlaySamplesComponent },
+  { path: 'file-preview-overlay', component: FilePreviewComponent },
   { path: 'mixed-drag-drop', component: MixedDragDropSamplesComponent },
   { path: 'contact-sample1' , component: ContactSample1Component},
   { path: '', redirectTo: 'about', pathMatch: 'full' },

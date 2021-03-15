@@ -6,8 +6,9 @@ import { ColorPickerOptionDirective } from './color-picker/color-picker-option.d
 import { BrowserModule } from '@angular/platform-browser';
 import { MixedOverlaySamplesComponent } from './mixed-overlay-samples/mixed-overlay-samples.component';
 import { BasicPanelLoadComponent } from './mixed-overlay-samples/basic-panel-load.component';
-
-
+import { FilePreviewComponent } from './file-preview/component/file-preview.component';
+import { FilePreviewOverlayComponent } from './file-preview/file-preview-overlay/file-preview-overlay.component';
+import { PreviewToolbarComponent } from './file-preview/file-preview-overlay/preview-toolbar/preview-toolbar.component';
 
 
 @NgModule({
@@ -15,12 +16,19 @@ import { BasicPanelLoadComponent } from './mixed-overlay-samples/basic-panel-loa
     ColorPickerComponent,
     ColorPickerOptionDirective,
     MixedOverlaySamplesComponent,
-    BasicPanelLoadComponent
+    BasicPanelLoadComponent,
+    FilePreviewComponent,
+    FilePreviewOverlayComponent,
+    PreviewToolbarComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
     MaterialModule 
+  ],
+  exports: [
+    FilePreviewOverlayComponent,
+    PreviewToolbarComponent
   ]
 })
 export class AppOverlayModule { }
