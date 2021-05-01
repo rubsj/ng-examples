@@ -1,53 +1,40 @@
-/*
-  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript’s language server to improve development experience.
-  It is not intended to be used to perform a compilation.
-
-  To learn more about this file see: https://angular.io/config/solution-tsconfig.
-*/
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./projects/core-samples-app/tsconfig.app.json"
-    },
-    {
-      "path": "./projects/core-samples-app/tsconfig.spec.json"
-    },
-    {
-      "path": "./projects/practice-samples-app/tsconfig.app.json"
-    },
-    {
-      "path": "./projects/practice-samples-app/tsconfig.spec.json"
-    },
-    {
-      "path": "./projects/fist-material-sample-lib/tsconfig.lib.json"
-    },
-    {
-      "path": "./projects/fist-material-sample-lib/tsconfig.spec.json"
-    },
-    {
-      "path": "./projects/practice-material-app/tsconfig.app.json"
-    },
-    {
-      "path": "./projects/practice-material-app/tsconfig.spec.json"
-    },
-    {
-      "path": "./projects/mat-fitness-tracker-lib/tsconfig.lib.json"
-    },
-    {
-      "path": "./projects/mat-fitness-tracker-lib/tsconfig.spec.json"
-    },
-    {
-      "path": "./projects/router-learning-app/tsconfig.app.json"
-    },
-    {
-      "path": "./projects/router-learning-app/tsconfig.spec.json"
-    },
-    {
-      "path": "./projects/d3-sample-app/tsconfig.app.json"
-    },
-    {
-      "path": "./projects/d3-sample-app/tsconfig.spec.json"
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "fist-material-sample-lib": [
+        "dist/fist-material-sample-lib"
+      ],
+      "fist-material-sample-lib/*": [
+        "dist/fist-material-sample-lib/*"
+      ],
+      "mat-fitness-tracker-lib": [
+        "dist/mat-fitness-tracker-lib"
+      ],
+      "mat-fitness-tracker-lib/*": [
+        "dist/mat-fitness-tracker-lib/*"
+      ]
     }
-  ]
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
 }

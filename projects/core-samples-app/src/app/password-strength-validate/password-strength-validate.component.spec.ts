@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PasswordStrengthValidateComponent } from './password-strength-validate.component';
 
@@ -6,7 +6,7 @@ describe('PasswordStrengthValidateComponent', () => {
   let component: PasswordStrengthValidateComponent;
   let fixture: ComponentFixture<PasswordStrengthValidateComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ PasswordStrengthValidateComponent ]
     })

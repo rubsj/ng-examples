@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { MatFitnessTrackerComponent } from './mat-fitness-tracker.component';
 
@@ -6,7 +6,7 @@ describe('MatFitnessTrackerLibComponent', () => {
   let component: MatFitnessTrackerComponent;
   let fixture: ComponentFixture<MatFitnessTrackerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ MatFitnessTrackerComponent ]
     })

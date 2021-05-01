@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { MixedDragDropSamplesComponent } from './mixed-drag-drop-samples.component';
 
@@ -6,7 +6,7 @@ describe('MixedDragDropSamplesComponent', () => {
   let component: MixedDragDropSamplesComponent;
   let fixture: ComponentFixture<MixedDragDropSamplesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ MixedDragDropSamplesComponent ]
     })
