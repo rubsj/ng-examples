@@ -31,7 +31,7 @@ export class PasswordStrengthValidateComponent implements OnInit {
     });
 
     this.pwdScoreBar$ = this.pwdValidator.score.pipe(
-      map(score =>{
+      map((score: number) =>{
           // first, normalize value for minimum needed password strength
         score = score > PasswordService.MIN_PASSWORD_SCORE ? PasswordService.MIN_PASSWORD_SCORE :score;
         
