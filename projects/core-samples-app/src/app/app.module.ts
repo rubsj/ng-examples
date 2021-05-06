@@ -11,6 +11,7 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { PasswordStrengthValidateComponent } from './password-strength-validate/password-strength-validate.component';
 import { PasswordStrengthValidateModule } from './password-strength-validate/password-strength-validate.module';
 import { AnimateModule } from './animate/animate.module';
+import { WrapMarkJsModule } from './wrap-mark-js/wrap-mark-js.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AnimateModule } from './animate/animate.module';
     CVAModule,
     // TypeaheadModule.forRoot(),
     PasswordStrengthValidateModule,
-    AnimateModule
+    AnimateModule,
+    WrapMarkJsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
