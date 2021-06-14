@@ -22,7 +22,6 @@
             "main": "projects/core-samples-app/src/main.ts",
             "polyfills": "projects/core-samples-app/src/polyfills.ts",
             "tsConfig": "projects/core-samples-app/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/core-samples-app/src/favicon.ico",
               "projects/core-samples-app/src/assets"
@@ -35,7 +34,13 @@
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -65,7 +70,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -152,7 +158,6 @@
             "main": "projects/practice-samples-app/src/main.ts",
             "polyfills": "projects/practice-samples-app/src/polyfills.ts",
             "tsConfig": "projects/practice-samples-app/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/practice-samples-app/src/favicon.ico",
               "projects/practice-samples-app/src/assets"
@@ -160,7 +165,13 @@
             "styles": [
               "projects/practice-samples-app/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -190,7 +201,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -312,7 +324,6 @@
             "main": "projects/practice-material-app/src/main.ts",
             "polyfills": "projects/practice-material-app/src/polyfills.ts",
             "tsConfig": "projects/practice-material-app/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/practice-material-app/src/favicon.ico",
               "projects/practice-material-app/src/assets"
@@ -321,7 +332,13 @@
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/practice-material-app/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -351,7 +368,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -474,7 +492,6 @@
             "main": "projects/router-learning-app/src/main.ts",
             "polyfills": "projects/router-learning-app/src/polyfills.ts",
             "tsConfig": "projects/router-learning-app/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/router-learning-app/src/favicon.ico",
               "projects/router-learning-app/src/assets"
@@ -486,7 +503,13 @@
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -516,7 +539,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -598,7 +622,6 @@
             "main": "projects/d3-sample-app/src/main.ts",
             "polyfills": "projects/d3-sample-app/src/polyfills.ts",
             "tsConfig": "projects/d3-sample-app/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/d3-sample-app/src/favicon.ico",
               "projects/d3-sample-app/src/assets"
@@ -606,7 +629,13 @@
             "styles": [
               "projects/d3-sample-app/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -636,7 +665,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
