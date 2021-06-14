@@ -7,7 +7,6 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { PasswordStrengthValidateComponent } from './password-strength-validate/password-strength-validate.component';
 import { OpenCloseAnimationComponent } from './animate/open-close-animation/open-close-animation.component';
 import { StateTransitionSample1Component } from './animate/state-transition-sample1/state-transition-sample1.component';
-import { MarkWrapperUsageComponent } from './wrap-mark-js/mark-wrapper-usage/mark-wrapper-usage.component';
 
 
 const routes: Routes = [
@@ -22,10 +21,6 @@ const routes: Routes = [
       /* { path: '', component: SimpleTransitionComponent , pathMatch: 'full'}, */
       { path: 'openClose', component: OpenCloseAnimationComponent },
       { path: 'stateTransition1', component: StateTransitionSample1Component },
-    ]
-  },{
-    path: 'wrap' , children: [
-      {path: 'markJs', component: MarkWrapperUsageComponent}
     ]
   },
   // { path: ' ', component: AppComponent, pathMatch: 'full' }, // this path works only when there is space in path
