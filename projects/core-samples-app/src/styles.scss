@@ -3,11 +3,7 @@
 @import '~@angular/cdk/overlay-prebuilt.css';
 @import '~@angular/cdk/a11y-prebuilt.css';
 @import "variables";
-@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap/scss/bootstrap";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.markjs-highlighter {
-    background-color: yellow;
-    padding: 0.2em;
-}
