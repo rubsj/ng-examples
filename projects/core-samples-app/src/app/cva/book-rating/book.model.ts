@@ -3,6 +3,7 @@ export interface Book {
   id: number;
 }
 
+
 export interface Rating {
   stars: number;
   text: string;
